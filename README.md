@@ -36,9 +36,6 @@ The app is deployed with Heroku
 
 ## Usage 
 
-![Front](public/images/front.png)
-![Dog](public/images/dogpage.png)
-
 ## Credits
 
 Below is a list of third-party tutorials used to help facilitate this project. 
