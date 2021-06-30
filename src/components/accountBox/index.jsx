@@ -83,7 +83,7 @@ const InnerContainer = styled.div`
 
 const FooterContainer = styled.div`
   text-align: center;
-  margin: auto;
+  padding-top: 25px;
   display: flex:
 
   `; 
@@ -168,7 +168,7 @@ export function AccountBox(props) {
           {active === "signup" && <SignupForm />}
         </InnerContainer>
         <FooterContainer>
-        <img src = {myImage} height={50} width={90} alt="logo"/>
+        <img src = {myImage} height={100} width={180} alt="logo"/>
         </FooterContainer>
       </BoxContainer>
   
