@@ -4,6 +4,7 @@ import { LoginForm } from "./loginForm";
 import { motion } from "framer-motion";
 import { AccountContext } from "./accountContext";
 import { SignupForm } from "./signupForm";
+import myImage from './assets/logo.png';
 
 const BoxContainer = styled.div`
   width: 280px;
@@ -25,6 +26,7 @@ const TopContainer = styled.div`
   justify-content: flex-end;
   padding: 0 1.8em;
   padding-bottom: 5em;
+  
 `;
 
 const BackDrop = styled(motion.div)`
@@ -42,6 +44,7 @@ const BackDrop = styled(motion.div)`
     58deg,
     rgba(198, 112, 112, 1) 20%,
     rgba(220, 106, 106, 1) 100%
+    
   );
 `;
 
@@ -49,6 +52,7 @@ const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  
 `;
 
 const HeaderText = styled.h2`
@@ -74,8 +78,16 @@ const InnerContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1.8em;
+  
 `;
 
+const FooterContainer = styled.div`
+  text-align: center;
+  margin: auto;
+  display: flex:
+
+  `; 
+  
 const backdropVariants = {
   expanded: {
     width: "233%",
@@ -137,8 +149,10 @@ export function AccountBox(props) {
           {active === "signin" && (
             <HeaderContainer>
               <HeaderText>Welcome</HeaderText>
-              <HeaderText>Back</HeaderText>
-              <SmallText>Please sign-in to continue!</SmallText>
+              <HeaderText>Back to Furrever</HeaderText>
+              <SmallText>Please sign-in to continue!
+                
+              </SmallText>
             </HeaderContainer>
           )}
           {active === "signup" && (
@@ -153,7 +167,11 @@ export function AccountBox(props) {
           {active === "signin" && <LoginForm />}
           {active === "signup" && <SignupForm />}
         </InnerContainer>
+        <FooterContainer>
+        <img src = {myImage} height={50} width={90} alt="logo"/>
+        </FooterContainer>
       </BoxContainer>
+  
     </AccountContext.Provider>
   );
 }
