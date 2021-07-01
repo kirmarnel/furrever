@@ -38,7 +38,7 @@ var newRequest = new XMLHttpRequest();
 //Open connection 
 newRequest.open("GET", url);
 
-newRequest.setRequestHeader("Authorization", "Bearer"+`${API_TOKEN_REQ.this.response}`);
+newRequest.setRequestHeader("Authorization", "Bearer"+`${API_TOKEN_REQ.access_token}`);
 
 newRequest.onreadystatechange = function () {
    if (newRequest.readyState === 4) {
@@ -50,8 +50,11 @@ newRequest.send();
 
 //Access JSON data to retrieve parameters
 var newRequest = JSON.parse(this.response)
-console.log(this.response)
 
+//Find and return only the items from types.name.dog
+var dog = this.response.types.find(item =>{ 
+  return item.name === "Dog"
+})
 
 
 
