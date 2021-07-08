@@ -59,7 +59,7 @@ var dog = this.response.type.find(item =>{
   return item.name === "Dog" //returns coats, colors, gender, and breeds in search page 
 })
 
-//EXPORT RESULTS/Selectable Search Params TO SEARCH PAGE
+//EXPORT/RENDER RESULTS TO SEARCH PAGE, MAKE SELECTABLE, THEN SEARCH PAGE TAKES SELECTIONS AND RETURNS MATCHING ANIMALS 
 
 
 // -------------------------------------------------------------------
