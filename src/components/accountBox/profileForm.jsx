@@ -86,7 +86,8 @@ font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",A
 
 `;
 
-export function HomeBox (props) {
+
+export function proiflePage (props) {
     return <BoxContainer>
         <TopContainer>
           <HeaderContainer>

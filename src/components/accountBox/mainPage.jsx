@@ -48,7 +48,7 @@ const HeaderContainer = styled.div`
 `;
 
 
-export function MainBox (props) {
+export function mainPage (props) {
     return <BoxContainer>
       <TopContainer>
         <HeaderContainer>
