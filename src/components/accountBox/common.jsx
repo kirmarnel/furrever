@@ -56,7 +56,8 @@ export const Input = styled.input`
 
 export const SubmitButton = styled.button`
   width: 100%;
-  padding: 11px 40%;
+  top-margin: 10px;
+  padding: 10px 40%;
   color: #fff;
   font-size: 15px;
   font-weight: 600;
@@ -73,5 +74,51 @@ export const SubmitButton = styled.button`
 
   &:hover {
     filter: brightness(1.03);
+  }
+`;
+export const Select = styled.select`
+  width: 100%;
+  height: 42px;
+  outline: none;
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  padding: 0px 10px;
+  border-bottom: 1.4px solid transparent;
+  transition: all 200ms ease-in-out;
+  font-size: 12px;
+
+  &::placeholder {
+    color: rgba(200, 200, 200, 1);
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1.5px solid rgba(200, 200, 200, 0.4) 20;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(220, 106, 106, 1);
+  }
+`;
+export const Textarea = styled.textarea`
+  width: 100%;
+  height: 42px;
+  outline: none;
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  padding: 0px 10px;
+  border-bottom: 1.4px solid transparent;
+  transition: all 200ms ease-in-out;
+  font-size: 12px;
+
+  &::placeholder {
+    color: rgba(200, 200, 200, 1);
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1.5px solid rgba(200, 200, 200, 0.4) 20;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(220, 106, 106, 1);
   }
 `;
