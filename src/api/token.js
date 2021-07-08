@@ -24,10 +24,14 @@ var API_TOKEN_REQ = 'grant_type=client_credentials&client_id'+`${API_KEY}`+'&cli
 request.send(API_TOKEN_REQ);
 
 //Access JSON data to retrieve Token 
-var API_TOKEN_REQ = JSON.parse(this.response);
-// console.log(this.response.access_token);
+var API_TOKEN_RES = JSON.parse(this.response);
+console.log(this.response.access_token);
 
-//-------NEW REQUEST FOR PARAMETERS-----------
+const
+
+export let token = API_TOKEN_RES.access_token;
+
+//-------NEW REQUEST FOR SEARCH PARAMETERS-----------
 
 //Create new request variable for types and assign object to get search paramaters from PetFinder using token 
 var url = "https://api.petfinder.com/v2/types";
@@ -37,7 +41,7 @@ const newRequest = new XMLHttpRequest();
 //Open connection 
 newRequest.open("GET", url);
 
-newRequest.setRequestHeader("Authorization", "Bearer"+`${API_TOKEN_REQ.access_token}`);
+newRequest.setRequestHeader("Authorization", "Bearer"+`${API_TOKEN_RES.access_token}`);
 
 newRequest.onreadystatechange = function () {
    if (newRequest.readyState === 4) {
@@ -51,9 +55,11 @@ newRequest.send();
 var newRequest = JSON.parse(this.response)
 
 //Find and return only the items from types.name.dog
-var dog = this.response.types.find(item =>{ 
-  return item.name === "Dog" //returns coats, colors, gender
+var dog = this.response.type.find(item =>{ 
+  return item.name === "Dog" //returns coats, colors, gender, and breeds in search page 
 })
+
+//EXPORT RESULTS/Selectable Search Params TO SEARCH PAGE
 
 
 // -------------------------------------------------------------------
