@@ -9,7 +9,7 @@ import {
   Textarea
 
 }
-  from "./common";
+  from "../accountBox/common";
 
 const BoxContainer = styled.div`
   width: 280px;
@@ -87,7 +87,7 @@ font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",A
 `;
 
 
-export function proiflePage (props) {
+export function ProfileBox (props) {
     return <BoxContainer>
         <TopContainer>
           <HeaderContainer>
@@ -131,3 +131,4 @@ export function proiflePage (props) {
     </BoxContainer>
 
 }
+export default ProfileBox;

@@ -48,7 +48,7 @@ const HeaderContainer = styled.div`
 `;
 
 
-export function mainPage (props) {
+export function MainBox (props) {
     return <BoxContainer>
       <TopContainer>
         <HeaderContainer>
@@ -65,3 +65,4 @@ export function mainPage (props) {
     </BoxContainer>
 
 }
+export default MainBox;
