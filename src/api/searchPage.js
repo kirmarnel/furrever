@@ -1,12 +1,9 @@
 import {token} from 'src/api/token.js';
 
-//Need User to select coats, colors, gender, then use those to return results and post them to results page
-
 var url = "https://api.petfinder.com/v2/animals"
 
-const searchRequest = new XMLHttpRequest();
+var searchRequest = new XMLHttpRequest();
 
-//Open connection 
 searchRequest.open("GET", url);
 
 searchRequest.setRequestHeader("Authorization", "Bearer"+`${token}`);
@@ -20,26 +17,46 @@ searchRequest.onreadystatechange = function () {
 searchRequest.send();
 
 
-//Access JSON data to retrieve parameters
-var searchRequest = JSON.parse(this.response);
+const userResponse = [
+    {name: 'dog'}
+];
 
-// function chooseCoat(dog) {
-//     return dog.coat == e.target.value
-// }
 
-// function chooseColor(dog) {
-//     return dog.color == e.target.value
-// }
+//Filter JSON data using user responses 
+var searchRequest = JSON.parse(this.response).filter(function (userResponse) {
+    return userResponse.id === '';
+})
 
-//Search by Coat
 
-var coat = this.response.animals.filter(item =>{ 
-    return item.name === "Coat" 
+//GET ID
+var id = this.response.animals.forEach(
+    console.log(` -- id: ${animal.id}`)
+)
+
+//USE ID TO RENDER PET-SPECIFIC PAGE
+
+
+
+var breed = this.response.animals.find( item =>{
+    return item.name === "Breed"
+})
+
+var size = this.response.animals.find(item =>{ 
+    return item.name === "Breed", item.name === "Size", item.name === "Gender", item.name === "Age", item.name === "Color", item.name === "Coat"
 });
 
-//Search by Color
+var gender = this.response.animals.find(item =>{
+    return item.name === "Gender"
+})
+
+var age = this.response.animals.find(item =>{
+    return item.name === "Age"
+})
+
 var color = this.response.animals.find(item =>{
     return item.name === "Color"
 })
 
-export var
+var coat = this.response.animals.find( item =>{
+    return item.name === "Coat"
+})
