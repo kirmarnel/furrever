@@ -1,3 +1,4 @@
+
 // import {token} from 'src/api/token.js';
 
 // var url = "https://api.petfinder.com/v2/animals"
@@ -67,3 +68,4 @@
 // var coat = this.response.animals.find( item =>{
 //     return item.name === "Coat"
 // })
+

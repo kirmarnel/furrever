@@ -41,6 +41,7 @@ axios.request(options).then(function(response) {
 
 
 
+
 // var url = "https://api.petfinder.com/v2/oauth2/token";
 
 // //Create request varaible and assign XMLHttpRequest object
@@ -65,6 +66,7 @@ axios.request(options).then(function(response) {
 // console.log(this.response.access_token);
 
 
+
 // export let token = API_TOKEN_RES.access_token;
 
 // //-------NEW REQUEST FOR SEARCH PARAMETERS-----------
@@ -79,11 +81,13 @@ axios.request(options).then(function(response) {
 
 // newRequest.setRequestHeader("Authorization", "Bearer"+`${API_TOKEN_RES.access_token}`);
 
+
 // newRequest.onreadystatechange = function () {
 //    if (newRequest.readyState === 4) {
 //       console.log(newRequest.status);
 //       console.log(newRequest.responseText);
 //    }};
+
 
 // newRequest.send();
 
@@ -96,9 +100,5 @@ axios.request(options).then(function(response) {
 // })
 
 // //EXPORT/RENDER RESULTS TO SEARCH PAGE, MAKE SELECTABLE, THEN SEARCH PAGE TAKES SELECTIONS AND RETURNS MATCHING ANIMALS 
-
-
-// // -------------------------------------------------------------------
-
 
 
