@@ -1,62 +1,71 @@
-import {token} from 'src/api/token.js';
 
-var url = "https://api.petfinder.com/v2/animals"
+// import {token} from 'src/api/token.js';
 
-var searchRequest = new XMLHttpRequest();
+// var url = "https://api.petfinder.com/v2/animals"
 
-searchRequest.open("GET", url);
+// var searchRequest = new XMLHttpRequest();
 
-searchRequest.setRequestHeader("Authorization", "Bearer"+`${token}`);
+// searchRequest.open("GET", url);
 
-searchRequest.onreadystatechange = function () {
-   if (searchRequest.readyState === 4) {
-      console.log(searchRequest.status);
-      console.log(searchRequest.responseText);
-   }};
+// searchRequest.setRequestHeader("Authorization", "Bearer"+`${token}`);
 
-searchRequest.send();
+// searchRequest.onreadystatechange = function () {
+//    if (searchRequest.readyState === 4) {
+//       console.log(searchRequest.status);
+//       console.log(searchRequest.responseText);
+//    }};
 
-
-const userResponse = [
-    {name: 'dog'}
-];
+// searchRequest.send();
 
 
-//Filter JSON data using user responses 
-var searchRequest = JSON.parse(this.response).filter(function (userResponse) {
-    return userResponse.id === '';
-})
+// const userResponse = [
+//     {name: 'dog'},
+//     {coat: ''},
+//     {color: ''},
+//     {breed: ''},
+// ];
+
+// // onSelect --> radial buttons --> grab through props --> pass through to search 
+
+// //Filter JSON data using user responses 
+// var searchRequest = JSON.parse(this.response).filter
 
 
-//GET ID
-var id = this.response.animals.forEach(
-    console.log(` -- id: ${animal.id}`)
-)
-
-//USE ID TO RENDER PET-SPECIFIC PAGE
+// (function (userResponse) {
+//     return userResponse.id === '';
+// })
 
 
+// //GET ID
+// var id = this.response.animals.forEach(
+//     console.log(` -- id: ${animal.id}`)
+// )
 
-var breed = this.response.animals.find( item =>{
-    return item.name === "Breed"
-})
+// //USE ID TO RENDER PET-SPECIFIC PAGE
 
-var size = this.response.animals.find(item =>{ 
-    return item.name === "Breed", item.name === "Size", item.name === "Gender", item.name === "Age", item.name === "Color", item.name === "Coat"
-});
 
-var gender = this.response.animals.find(item =>{
-    return item.name === "Gender"
-})
 
-var age = this.response.animals.find(item =>{
-    return item.name === "Age"
-})
+// var breed = this.response.animals.find( item =>{
+//     return item.name === "Breed"
+// })
 
-var color = this.response.animals.find(item =>{
-    return item.name === "Color"
-})
+// var size = this.response.animals.find(item =>{ 
+//     return item.name === "Breed", item.name === "Size", item.name === "Gender", item.name === "Age", item.name === "Color", item.name === "Coat"
+// });
 
-var coat = this.response.animals.find( item =>{
-    return item.name === "Coat"
-})
+// var gender = this.response.animals.find(item =>{
+//     return item.name === "Gender"
+// })
+
+// var age = this.response.animals.find(item =>{
+//     return item.name === "Age"
+// })
+
+// var color = this.response.animals.find(item =>{
+//     return item.name === "Color"
+// })
+
+// var coat = this.response.animals.find( item =>{
+//     return item.name === "Coat"
+// })
+
