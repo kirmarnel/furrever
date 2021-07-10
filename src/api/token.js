@@ -49,3 +49,4 @@ async function showAnimals(animalType, searchBreed) {
   await showAnimals("Dog", "Corgi");
 
 })();
+
