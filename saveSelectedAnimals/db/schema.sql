@@ -1,0 +1,3 @@
+DROP IF EXISTS saveSelectedAnimals
+
+CREATE saveSelectedAnimals
