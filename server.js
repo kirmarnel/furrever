@@ -2,9 +2,9 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
-const sequelize = require('./config/connection');
 const cors = require("cors");
-const User = require('./models/User')
+const mongoose = require("mongoose");
+
 
 
 // Define middleware here
@@ -31,20 +31,19 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
-app.post ('/', (req, res) => {
-  User.create({
-      fullName: req.body.fullName,
-      email: req.body.email,
-      password: req.body.password
-  }).then((user) => {
-      res.json(user);
-    }).catch((err) => res.json(err));
-});
+mongoose.connect(
+  process.env.MONGODB_URI || '',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => {
-    console.log(`🌎 ==> API server now on port ${PORT}!`);
-  });
-  });
+
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}!`);
+});
 
 

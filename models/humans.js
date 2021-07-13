@@ -1,44 +1,28 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const mongoose = require("mongoose");
 
-class Humans extends Model {}
+const Schema = mongoose.Schema;
 
-Humans.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false, 
-            primaryKey: true, 
-            autoIncrement: true,
-       
-        },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false, 
-        },
-        age: {
-            type: DataTypes.INTEGER, 
-            allowNull: false, 
-        }, 
-        gender: {
-            type: DataTypes.STRING,
-            allowNull:false, 
-        },
-        description: {
-            type: DataTypes.STRING, 
-            allowNull: false
-        },
-        filename: {
-            type: DataTypes.STRING,
-            allowNull: false,
-          },
-    }, 
-    {
-        sequelize, 
-        freezeTableName: true, 
-        underscored:true, 
-        modelName: 'humans'
+const profileSchema = new Schema({
 
-    }
-);
-module.exports = Humans; 
+    name: {
+        type: String,
+        required: 'Please enter your name'
+    },
+    age: {
+        type: Number,
+        required: 'Please enter your age'
+    },
+    gender: {
+        type: String,
+    },
+    bio: {
+        type: String,
+        required: 'Please enter a bio'
+    },
+    
+
+})
+
+const Profile = mongoose.model("Profile", profileSchema);
+
+module.exports = Profile;
