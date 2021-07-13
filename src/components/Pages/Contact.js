@@ -21,18 +21,9 @@ const InnerText = styled.h2`
   text-decoration: none;
   font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
-const BottomContainer = styled.div`
-height:450px;
-display: flex;
-`;
 
-const FooterContainer = styled.div`
-width: 100%;
-height:65px;
-display: flex;
-flex-direction: column;
-background: rgb(237,237,237)
-`;
+
+
 export const Contact = () => {
   return (
     
