@@ -13,6 +13,13 @@ const InnerText = styled.h2`
   font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
 
+const Title = styled.div`
+font-size: 10pt;
+color: #737373;
+font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+`;
+
+
 const InnerContainer = styled.div`
   width: 100%;
   display: flex;
@@ -145,7 +152,7 @@ export const Search = () => {
           <InnerText>Search</InnerText>
         <LableContainer>
 
-          <p>Pick your Dog Bread</p>
+          <Title>Pick your Dog Bread</Title>
           <br>
           </br>
           <Select>
@@ -155,7 +162,9 @@ export const Search = () => {
             </InnerText>
           <option value="lime">English Bull Dog</option>
           </Select>
-          <p>Pick your Cat Bread</p>
+          <br>
+          </br>
+          <Title>Pick your Cat Bread</Title>
           <br>
           </br>
           <Select>
@@ -165,6 +174,10 @@ export const Search = () => {
           <option value="text">Calico</option>
           <option value="lime">Tabby</option>
           </Select>
+          <br>
+          </br>
+          <br>
+          </br>
           <br>
           </br>
           <SubmitButton>Submit</SubmitButton>

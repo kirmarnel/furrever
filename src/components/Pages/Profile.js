@@ -33,6 +33,7 @@ display: flex;
 const Input = styled.input`
   width: 100%;
   height: 42px;
+  padding-top: 10px;
   outline: none;
   border: 1px solid rgba(200, 200, 200, 0.3);
   padding: 0px 10px;
@@ -134,8 +135,11 @@ align-items: center;
 font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
 
-
-
+const Title = styled.div`
+font-size: 10pt;
+color: #737373;
+font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+`;
 
 
 export const Profile = () => {
@@ -144,18 +148,18 @@ export const Profile = () => {
       <InnerContainer>
           <InnerText>Profile Page</InnerText>
         <LableContainer>
-          Name
+          <Title> Name </Title>
           <Input type="text" name="name"/>
-          Address
+          <Title>Address</Title>
           <Input type="text" name="name"/>
-          Phone Number
+          <Title>Phone Number</Title>
           <Input type="text" name="name"/>
-          <p>Pick your Pet</p>
+          <Title>Pick Your Pet!</Title>
          <Select>
           <option value="text">Dog</option>
           <option value="lime">Cat</option>
           </Select>
-          <p>Describe your lifestyle</p>
+          <Title>Describe Your Lifestyle</Title>
           <Textarea>
           </Textarea>
           <SubmitButton>Submit</SubmitButton>
