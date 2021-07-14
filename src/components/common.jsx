@@ -99,18 +99,6 @@ export const SubmitButton = styled.button`
     filter: brightness(1.03);
   }
 `;
-export const navbar = styled.div`
-background-color: #f1f0f0;
-height: 80px;
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: 1.2rem;
-position: sticky;
-top: 0;
-z-index: 50;
-  }
-`;
 export const Select = styled.select`
   width: 100%;
   height: 42px;
@@ -156,5 +144,4 @@ export const Textarea = styled.textarea`
     outline: none;
     border-bottom: 2px solid rgb(220, 106, 106, 1);
   }
-  
 `;
