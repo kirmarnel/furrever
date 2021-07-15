@@ -214,16 +214,18 @@ const Description = styled.p`
 //     opacity: 0.8;
 //     `;
 
-export const Card = (props) => {
+const Card = (props) => {
   return (
 
       <InnerContainer>
         <LableContainer>
+          
   
-    <InnerText>Pet Name</InnerText>
-    <Container></Container>
+    <InnerText>Pet Name {props.name}</InnerText>
+    <Container>{props.photos}</Container>
     <Date></Date>
     <Description>
+      {props.description}
       Here is the gretest dog you will ever meet! She is fun and full of energy
       She would be a great addition to any family.Here is the gretest dog you will ever meet! She is fun and full of energy
       She would be a great addition to any family.
@@ -239,3 +241,5 @@ export const Card = (props) => {
 
   );
 };
+
+export default Card;

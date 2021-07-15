@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import displayBreeds from "../searchBox/searchByBreed";
 import populateAnimals from "../searchBox/getAnimals";
+import Card from "../Pages/Card";
+const petfinder = require("@petfinder/petfinder-js")
 
 const InnerText = styled.h2`
   font-size: 25px;
@@ -142,37 +144,82 @@ align-items: center;
 font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
 
+class Search extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {dog:'Goldendoodle', apiData:[]};
+  
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+  
+    handleChange(event) {
+      console.log(event.target.value)
+      this.setState({dog: event.target.value});
+    }
+    
+  
+    handleSubmit(event) {
+      event.preventDefault();
+      const API_KEY = 'L2PfxvEeu4R2F4FxiieGEHkh78o1dQpEapxnWjesdIvACBSsWP'
+      const API_SECRET = 'F9tVif6NQRsjR6XHKkgTiov9bd2DujsyYEjqaEvB'
+      var client = new petfinder.Client({apiKey: API_KEY, secret: API_SECRET})
 
+       client.animal.search({
+          type: "Dog",
+          breed: this.state.dog,
+          limit: 100,
+        }).then(response => {
+          console.log(response.data.animals)
+          var apiData = response.data.animals;
+          let apiResults = []
+          for (let i=0;i < apiData.length;i++) {
+            apiResults.push({
+              name: apiData [i].name,
+              description: apiData[i].description, 
+              primary_photo_cropped: apiData [i].primary_photo_cropped,
+            })
+          }
+          this.setState({apiData:apiResults})
+        })
+  
+  
 
-export const Search = () => {
-  const handleButton = event => {
-    event.preventDefault()
-    console.log(event.target)
-  }
-  return (
-    <InnerContainer>
-      <InnerText>Search</InnerText>
-        <LableContainer>
-          <Title>Pick your Dog Breed</Title>
-            <br>
-            </br>
-          <form onSubmit={handleButton}>
-          <Select>
-            <option value="Poodle">Poodle</option>
-            <InnerText>
-              Breed
-            </InnerText>
-            <option value="English Bulldog">English Bull Dog</option>
-            <option value ="Australian Shepherd">Aussie</option>
-            <option value ="Bulldog">Bull Dog</option>
-            <option value ="Corgi">Corgi</option>
-          </Select>
-            <br>
-            </br>
-          <button type="submit" value="Submit"></button>
+     
+      
+      
+      
+    }
+ 
+  
+    render() {
+      
+      return (
+        <div>
+        <form>
+
+          <label>
+
+            Select a Breed:
+            <select value={this.state.dog} onChange={this.handleChange}>
+              <option value="">Grapefruit</option>
+              <option value="Golden doodle" default>Lime</option>
+              <option value="Hound">Coconut</option>
+              <option value="Corgi">Mango</option>
+            </select>
+          </label>
+          <button type="submit" onClick={this.handleSubmit}>Search Dogs</button>
+
         </form>
-        </LableContainer>
-    </InnerContainer>
+        {this.state.apiData.map((i,key) => <Card props = {i} key={key}/>)}
+        </div>
+      );
+    }
+  }
+  
+  export default Search
 
-  );
-};
+  // ReactDOM.render(
+  //   <Search/>,
+  //   document.getElementById('root')
+  // );
