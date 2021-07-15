@@ -1,9 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-
-
 import styled from "styled-components";
+import displayBreeds from "../searchBox/searchByBreed";
+import populateAnimals from "../searchBox/getAnimals";
+
 const InnerText = styled.h2`
   font-size: 25px;
   text-align: center;
@@ -143,47 +144,35 @@ font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",A
 
 
 
-
-
 export const Search = () => {
+  const handleButton = event => {
+    event.preventDefault()
+    console.log(event.target)
+  }
   return (
-
-      <InnerContainer>
-          <InnerText>Search</InnerText>
+    <InnerContainer>
+      <InnerText>Search</InnerText>
         <LableContainer>
-
-          <Title>Pick your Dog Bread</Title>
-          <br>
-          </br>
+          <Title>Pick your Dog Breed</Title>
+            <br>
+            </br>
+          <form onSubmit={handleButton}>
           <Select>
-          <option value="text">Poodle</option>
-          <InnerText>
-              Bread
-            </InnerText>
-          <option value="lime">English Bull Dog</option>
-          </Select>
-          <br>
-          </br>
-          <Title>Pick your Cat Bread</Title>
-          <br>
-          </br>
-          <Select>
+            <option value="Poodle">Poodle</option>
             <InnerText>
-              Cat Bread
+              Breed
             </InnerText>
-          <option value="text">Calico</option>
-          <option value="lime">Tabby</option>
+            <option value="English Bulldog">English Bull Dog</option>
+            <option value ="Australian Shepherd">Aussie</option>
+            <option value ="Bulldog">Bull Dog</option>
+            <option value ="Corgi">Corgi</option>
           </Select>
-          <br>
-          </br>
-          <br>
-          </br>
-          <br>
-          </br>
-          <SubmitButton>Submit</SubmitButton>
-       
-          </LableContainer>
-          </InnerContainer>
+            <br>
+            </br>
+          <button type="submit" value="Submit"></button>
+        </form>
+        </LableContainer>
+    </InnerContainer>
 
   );
 };
