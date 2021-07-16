@@ -9,6 +9,8 @@ import { Contact } from "./components/Pages/Contact";
 import { BoxContainer } from "./components/common";
 import { AppContainer } from "./components/common";
 import { Profile } from "./components/Pages/Profile";
+import { LoginForm } from "./components/accountBox/loginForm"
+import { SignupForm } from "./components/accountBox/signupForm"
 
 
 function App() {
@@ -40,6 +42,14 @@ function App() {
             <Route path="/contact">
               <NavBar />
               <Contact />
+            </Route>
+            <Route path="/login">
+              <NavBar />
+              <LoginForm />
+            </Route>
+            <Route path="/signup">
+              <NavBar />
+              <SignupForm />
             </Route>
           </Switch>
           </BoxContainer>
