@@ -1,8 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
-
-
 import styled from "styled-components";
 const InnerText = styled.h2`
   font-size: 25px;
@@ -33,7 +30,7 @@ display: flex;
 const Input = styled.input`
   width: 100%;
   height: 42px;
-  padding-top: 10px;
+  padding-top: 20px;
   outline: none;
   border: 1px solid rgba(200, 200, 200, 0.3);
   padding: 0px 10px;
@@ -102,7 +99,7 @@ const Select = styled.select`
 
 const Textarea = styled.textarea`
   width: 100%;
-  height: 42px;
+  height: 65px;
   outline: none;
   border: 1px solid rgba(200, 200, 200, 0.3);
   padding: 0px 10px;
@@ -146,23 +143,17 @@ export const Profile = () => {
   return (
 
       <InnerContainer>
-          <InnerText>Profile Page</InnerText>
-        <LableContainer>
-          <Title> Name </Title>
-          <Input type="text" name="name"/>
-          <Title>Address</Title>
-          <Input type="text" name="name"/>
-          <Title>Phone Number</Title>
-          <Input type="text" name="name"/>
-          <Title>Pick Your Pet!</Title>
-         <Select>
-          <option value="text">Dog</option>
-          <option value="lime">Cat</option>
-          </Select>
-          <Title>Describe Your Lifestyle</Title>
-          <Textarea>
-          </Textarea>
-          <SubmitButton>Submit</SubmitButton>
+          
+    <InnerText>Profile</InnerText>
+  <LableContainer>
+  <Input type="name" placeholder="Name"/>
+  <Input type="email" placeholder="Email"/>
+  <Input type="address" placeholder="Address"/>
+  <Input type="phone number" placeholder="Phone Number"/>
+    <Title>Message</Title>
+    <Textarea>
+    </Textarea>
+    <SubmitButton>Submit</SubmitButton>
           <label>
             <br/>
             <br/>
