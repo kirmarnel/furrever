@@ -1,10 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
 import styled from "styled-components";
-import displayBreeds from "../searchBox/searchByBreed";
-import populateAnimals from "../searchBox/getAnimals";
-import Card from "../Pages/Card";
+import { Card } from "../Pages/Card";
 const petfinder = require("@petfinder/petfinder-js")
 
 const InnerText = styled.h2`
@@ -132,7 +129,7 @@ const Textarea = styled.textarea`
     border-bottom: 2px solid rgb(220, 106, 106, 1);
   }
 `;
-const LableContainer = styled.div`
+const LabelContainer = styled.div`
 width: 250px;
 display: flex;
 flex-direction: column;
@@ -147,7 +144,7 @@ font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",A
 class Search extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {dog:'Goldendoodle', apiData:[]};
+      this.state = {dog:'Labrador Retriever', apiData:[]};
   
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -156,8 +153,8 @@ class Search extends React.Component {
     handleChange(event) {
       console.log(event.target.value)
       this.setState({dog: event.target.value});
+      event.preventDefault(); 
     }
-    
   
     handleSubmit(event) {
       event.preventDefault();
@@ -170,52 +167,55 @@ class Search extends React.Component {
           breed: this.state.dog,
           limit: 100,
         }).then(response => {
-          console.log(response.data.animals)
+          console.log(response.data.animals);
           var apiData = response.data.animals;
           let apiResults = []
           for (let i=0;i < apiData.length;i++) {
             apiResults.push({
-              name: apiData [i].name,
+              id: apiData[i].id,
               description: apiData[i].description, 
-              primary_photo_cropped: apiData [i].primary_photo_cropped,
+              primary_photo_cropped: apiData [i].primary_photo_cropped
             })
           }
-          this.setState({apiData:apiResults})
-        })
-  
-  
-
-     
-      
-      
-      
+        this.setState({apiData:apiResults})
+      });
     }
- 
-  
     render() {
-      
       return (
         <div>
         <form>
-
-          <label>
-
+          
+          <LabelContainer>
             Select a Breed:
-            <select value={this.state.dog} onChange={this.handleChange}>
-              <option value="">Grapefruit</option>
-              <option value="Golden doodle" default>Lime</option>
-              <option value="Hound">Coconut</option>
-              <option value="Corgi">Mango</option>
-            </select>
-          </label>
-          <button type="submit" onClick={this.handleSubmit}>Search Dogs</button>
+            <Select value={this.state.dog} onChange={this.handleChange}>
+              <option value="Beagle">Beagle</option>
+              <option value="Border Collie">Border Collie</option>
+              <option value="Corgi">Corgi</option>
+              <option value="Dachshund">Dachshund</option>
+              <option value="German Shepherd Dog">German Shepherd</option>
+              <option value="Great Pyrenees" default>Great Pyrenees</option>
+              <option value="Labrador Retriever" default >Labrador Retriever</option>
+              <option value="Mixed Breed">Mixed Breed</option>
+              <option value="Pit Bull Terrier">Pit Bull Terrier</option>
+              <option value="Shepherd"> Shepherd</option>
+              <option value="Siberian Husky">Siberian Husky</option>
+              <option value="Terrier">Terrier</option>
+            </Select>
+          </LabelContainer>
+          <br>
+          </br>
+          <br>
+          </br>
+          <br>
+          </br>
+          <SubmitButton type="submit" onClick={this.handleSubmit}>Search Dogs</SubmitButton>
 
         </form>
-        {this.state.apiData.map((i,key) => <Card props = {i} key={key}/>)}
+        {this.state.apiData.map((i, key) => <Card props = {i} key={key}/>)}
         </div>
-      );
-    }
-  }
+      )
+    };
+}
   
   export default Search
 

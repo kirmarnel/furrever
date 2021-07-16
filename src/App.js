@@ -4,7 +4,8 @@ import NavBar from "./components/NavBar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Home } from "./components/Pages/Home";
 import { About } from "./components/Pages/About";
-import Search  from "./components/Pages/Search";
+import Search from "./components/Pages/Search";
+import { Card } from "./components/Pages/Card";
 import { Contact } from "./components/Pages/Contact";
 import { BoxContainer } from "./components/common";
 import { AppContainer } from "./components/common";
@@ -36,6 +37,9 @@ function App() {
             <Route path="/search">
               <NavBar />
               <Search />
+            </Route>
+            <Route path="/card">
+              <Card/>
             </Route>
             <Route path="/contact">
               <NavBar />
