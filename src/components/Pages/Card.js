@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components"
 import Thumbup from '../assets/thumbsup.png';
 import Thumbdown from '../assets/thumbsdown.png';
+import { Search } from "../Pages/Search";
+import { render } from "@testing-library/react";
 
 const InnerText = styled.h2`
   font-size: 25px;
@@ -214,15 +216,14 @@ const Description = styled.p`
 //     opacity: 0.8;
 //     `;
 
-const Card = (props) => {
+export const Card = (props) => {
+console.log(props);
+render();
   return (
-
       <InnerContainer>
         <LableContainer>
-          
-  
-    <InnerText>Pet Name {props.name}</InnerText>
-    <Container>{props.photos}</Container>
+    <InnerText>Pet Name </InnerText>
+    <Container></Container>
     <Date></Date>
     <Description>
       {props.description}
@@ -242,4 +243,22 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+// client.animal.search({
+//   type: "Dog",
+//   breed: this.state.dog,
+//   limit: 100
+// }).then(response => {
+//   response.data.animals.forEach(function(animal){
+//   console.log(`-- id: ${animal.id}`);
+//   var apiData=`--id: ${animal.id}`;
+//   let apiResults = []
+//   for (let i=0;i < apiData.length;i++) {
+//     apiResults.push({
+//       id: apiData[i]
+//     })
+//   };
+//   this.setState({apiData:apiResults})
+// })
+// })
+// }
+// 
