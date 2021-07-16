@@ -154,10 +154,8 @@ export const Contact = () => {
     <InnerContainer>
     <InnerText>Contact</InnerText>
   <LableContainer>
-   <Title>Name</Title> 
-    <Input type="text" name="name"/>
-    <Title>Email Address</Title>
-    <Input type="text" name="name"/>
+  <Input type="name" placeholder="Name"/>
+  <Input type="email" placeholder="Email"/>
 
     <Title>Message</Title>
     <Textarea>
