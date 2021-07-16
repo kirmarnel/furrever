@@ -4,17 +4,11 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
+const userRoutes = require("./routes/userRoutes")
 
 
 
 // Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-
 app.use(
   cors({
     origin: ["http://localhost:3000"],
@@ -22,6 +16,15 @@ app.use(
     credentials: true,
   })
 );
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(userRoutes);
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+
 
 // Define API routes herez
 
@@ -32,7 +35,7 @@ app.get("*", (req, res) => {
 });
 
 mongoose.connect(
-  process.env.MONGODB_URI || '',
+  process.env.MONGODB_URI || 'mongodb://localhost/furrever',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
