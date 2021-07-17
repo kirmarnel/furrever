@@ -60,27 +60,28 @@ const Input = styled.input`
     border-bottom: 2px solid rgb(220, 106, 106, 1);
   }
 `;
-const SubmitButton = styled.button`
-  width: 100%;
-  top-margin: 10px;
-  padding: 10px 40%;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  border: none;
-  border-radius: 100px 100px 100px 100px;
-  cursor: pointer;
-  transition: all, 240ms ease-in-out;
-  background: rgb(241, 196, 15);
-  background: linear-gradient(
-    58deg,
-    rgba(220, 106, 106, 1) 20%,
-    rgba(198, 112, 112, 1) 100%
-  );
 
-  &:hover {
-    filter: brightness(1.03);
-  }
+const SubmitButton = styled.button`
+width: 100%;
+top-margin: 10px;
+padding: 10px 40%;
+color: #fff;
+font-size: 15px;
+font-weight: 600;
+border: none;
+border-radius: 100px 100px 100px 100px;
+cursor: pointer;
+transition: all, 240ms ease-in-out;
+background: rgb(241, 196, 15);
+background: linear-gradient(
+  58deg,
+  rgba(220, 106, 106, 1) 20%,
+  rgba(198, 112, 112, 1) 100%
+);
+
+&:hover {
+  filter: brightness(1.03);
+}
 `;
 const Select = styled.select`
   width: 100%;
@@ -184,9 +185,10 @@ class Search extends React.Component {
       return (
         <div>
         <form>
-          
+          <InnerContainer>
           <LabelContainer>
-            Select a Breed:
+            <InnerText>
+            Select a Breed</InnerText>
             <Select value={this.state.dog} onChange={this.handleChange}>
               <option value="Beagle">Beagle</option>
               <option value="Border Collie">Border Collie</option>
@@ -202,6 +204,7 @@ class Search extends React.Component {
               <option value="Terrier">Terrier</option>
             </Select>
           </LabelContainer>
+          </InnerContainer>
           <br>
           </br>
           <br>
