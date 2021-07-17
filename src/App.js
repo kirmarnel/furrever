@@ -48,11 +48,9 @@ function App() {
               <Contact />
             </Route>
             <Route path="/login">
-              <NavBar />
               <LoginForm />
             </Route>
             <Route path="/signup">
-              <NavBar />
               <SignupForm />
             </Route>
           </Switch>
