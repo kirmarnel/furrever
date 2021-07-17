@@ -4,7 +4,7 @@ import styled from "styled-components"
 import Thumbup from '../assets/thumbsup.png';
 import Thumbdown from '../assets/thumbsdown.png';
 import { Search } from "../Pages/Search";
-import { render } from "@testing-library/react";
+
 
 const InnerText = styled.h2`
   font-size: 25px;
@@ -200,63 +200,27 @@ const Description = styled.p`
 `
     
 
-// const ActionButton = styled.button`
-// position: realative;
-//   padding: 8px 14px 10px 10px;
-//   border: none;
-//   adding: 16px 17px;
-//   background: #dc6a6a;
-//   color: #fff;
-//   border-radius: 80px 80px 80px 80px;
-//   cursor: pointer;
-//   font-weight: 300;
-//   :hover {
-//     opacity: 0.8;
-//     `;
+
 
 export const Card = (props) => {
 console.log(props);
-render();
   return (
       <InnerContainer>
         <LableContainer>
-    <InnerText>Pet Name </InnerText>
+    <InnerText>{props.props.name} </InnerText>
     <Container></Container>
     <Date></Date>
     <Description>
-      {props.description}
-      Here is the gretest dog you will ever meet! She is fun and full of energy
-      She would be a great addition to any family.Here is the gretest dog you will ever meet! She is fun and full of energy
-      She would be a great addition to any family.
+      {props.props.description}
     </Description>
     <br>
     </br>
     <Wrapper>
-    <ActionButton><img src = {Thumbup} height={50} width={50} alt="up"/></ActionButton>
-    <ActionButton><img src = {Thumbdown} height={50} width={50} alt="down"/></ActionButton>
+    <ActionButton ><img src = {Thumbup} height={50} width={50} alt="up"/></ActionButton>
+    <ActionButton ><img src = {Thumbdown} height={50} width={50} alt="down"/></ActionButton>
     </Wrapper>  
           </LableContainer>
           </InnerContainer>
 
   );
 };
-
-// client.animal.search({
-//   type: "Dog",
-//   breed: this.state.dog,
-//   limit: 100
-// }).then(response => {
-//   response.data.animals.forEach(function(animal){
-//   console.log(`-- id: ${animal.id}`);
-//   var apiData=`--id: ${animal.id}`;
-//   let apiResults = []
-//   for (let i=0;i < apiData.length;i++) {
-//     apiResults.push({
-//       id: apiData[i]
-//     })
-//   };
-//   this.setState({apiData:apiResults})
-// })
-// })
-// }
-// 

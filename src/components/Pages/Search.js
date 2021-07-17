@@ -60,28 +60,27 @@ const Input = styled.input`
     border-bottom: 2px solid rgb(220, 106, 106, 1);
   }
 `;
-
 const SubmitButton = styled.button`
-width: 100%;
-top-margin: 10px;
-padding: 10px 40%;
-color: #fff;
-font-size: 15px;
-font-weight: 600;
-border: none;
-border-radius: 100px 100px 100px 100px;
-cursor: pointer;
-transition: all, 240ms ease-in-out;
-background: rgb(241, 196, 15);
-background: linear-gradient(
-  58deg,
-  rgba(220, 106, 106, 1) 20%,
-  rgba(198, 112, 112, 1) 100%
-);
+  width: 100%;
+  top-margin: 10px;
+  padding: 10px 40%;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 100px 100px 100px 100px;
+  cursor: pointer;
+  transition: all, 240ms ease-in-out;
+  background: rgb(241, 196, 15);
+  background: linear-gradient(
+    58deg,
+    rgba(220, 106, 106, 1) 20%,
+    rgba(198, 112, 112, 1) 100%
+  );
 
-&:hover {
-  filter: brightness(1.03);
-}
+  &:hover {
+    filter: brightness(1.03);
+  }
 `;
 const Select = styled.select`
   width: 100%;
@@ -145,19 +144,24 @@ font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",A
 class Search extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {dog:'Labrador Retriever', apiData:[]};
+      this.state = {dog:'Labrador Retriever', 
+      apiData:[], 
+      count: 0,
+    
+    };
+    
   
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+      // this.handleChange = this.handleChange.bind(this);
+      // this.handleSubmit = this.handleSubmit.bind(this);
     }
   
-    handleChange(event) {
+    handleChange = (event) => {
       console.log(event.target.value)
       this.setState({dog: event.target.value});
       event.preventDefault(); 
     }
   
-    handleSubmit(event) {
+    handleSubmit = (event) => {
       event.preventDefault();
       const API_KEY = 'L2PfxvEeu4R2F4FxiieGEHkh78o1dQpEapxnWjesdIvACBSsWP'
       const API_SECRET = 'F9tVif6NQRsjR6XHKkgTiov9bd2DujsyYEjqaEvB'
@@ -166,7 +170,7 @@ class Search extends React.Component {
        client.animal.search({
           type: "Dog",
           breed: this.state.dog,
-          limit: 100,
+          limit: 10,
         }).then(response => {
           console.log(response.data.animals);
           var apiData = response.data.animals;
@@ -181,15 +185,20 @@ class Search extends React.Component {
         this.setState({apiData:apiResults})
       });
     }
+    handleNext = () => {
+      let count = this.state.count
+      count++;
+      this.setState({count: count})
+      console.log(this.state.count);
+    };
+  
     render() {
       return (
         <div>
-         
         <form>
-           <InnerContainer>
+          
           <LabelContainer>
-            <InnerText>
-            Select a Breed</InnerText>
+            Select a Breed:
             <Select value={this.state.dog} onChange={this.handleChange}>
               <option value="Beagle">Beagle</option>
               <option value="Border Collie">Border Collie</option>
@@ -205,7 +214,6 @@ class Search extends React.Component {
               <option value="Terrier">Terrier</option>
             </Select>
           </LabelContainer>
-          </InnerContainer>
           <br>
           </br>
           <br>
@@ -215,7 +223,7 @@ class Search extends React.Component {
           <SubmitButton type="submit" onClick={this.handleSubmit}>Search Dogs</SubmitButton>
 
         </form>
-        {this.state.apiData.map((i, key) => <Card props = {i} key={key}/>)}
+        {this.handleNext((i, key) => <Card props = {i} key={key}/>)}
         </div>
       )
     };
