@@ -184,8 +184,9 @@ class Search extends React.Component {
     render() {
       return (
         <div>
+         
         <form>
-          <InnerContainer>
+           <InnerContainer>
           <LabelContainer>
             <InnerText>
             Select a Breed</InnerText>
