@@ -12,6 +12,7 @@ import { AppContainer } from "./components/common";
 import { Profile } from "./components/Pages/Profile";
 import { LoginForm } from "./components/accountBox/loginForm"
 import { SignupForm } from "./components/accountBox/signupForm"
+import { ProtectedRoute } from "../src/components/protectedRoute"
 
 
 function App() {
