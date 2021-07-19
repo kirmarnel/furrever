@@ -208,7 +208,11 @@ console.log(props);
       <InnerContainer>
         <LableContainer>
     <InnerText>{props.props.name} </InnerText>
-    <Container></Container>
+
+    <Container>
+      <img src={props.props.photos} alt={props.props.photos}
+      />
+    </Container>
     <Date></Date>
     <Description>
       {props.props.description}

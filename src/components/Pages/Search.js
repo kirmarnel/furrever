@@ -1,3 +1,4 @@
+// import { Button } from "bootstrap";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
@@ -145,9 +146,10 @@ class Search extends React.Component {
     constructor(props) {
       super(props);
       this.state = {dog:'Labrador Retriever', 
-      apiData:[], 
-      count: 0,
-    
+      apiData:[],
+      currentPet: {},
+      currentPetIndex: 0,
+      displaySearch: true
     };
     
   
@@ -163,8 +165,8 @@ class Search extends React.Component {
   
     handleSubmit = (event) => {
       event.preventDefault();
-      const API_KEY = 'L2PfxvEeu4R2F4FxiieGEHkh78o1dQpEapxnWjesdIvACBSsWP'
-      const API_SECRET = 'F9tVif6NQRsjR6XHKkgTiov9bd2DujsyYEjqaEvB'
+      const API_KEY = '0Hj8w8pgamlFFvo6xp8aJG6GPVcIb0tCwYv26pzW6AKvRf7PlT'
+      const API_SECRET = 'OG9M2CYbc8EMQBDAFZHav5TUMmGO1xYM9bCsB2pa'
       var client = new petfinder.Client({apiKey: API_KEY, secret: API_SECRET})
 
        client.animal.search({
@@ -176,27 +178,51 @@ class Search extends React.Component {
           var apiData = response.data.animals;
           let apiResults = []
           for (let i=0;i < apiData.length;i++) {
+            if (apiData [i].photos[0].small){
             apiResults.push({
-              id: apiData[i].id,
+              name: apiData[i].name,
               description: apiData[i].description, 
-              primary_photo_cropped: apiData [i].primary_photo_cropped
+              photos: apiData[i].photos[0].small
+            })
+          }else if (apiData[i].primary_photo_cropped.small){
+            apiResults.push({
+              name: apiData[i].name,
+              description: apiData[i].description, 
+              photos: apiData[i].primary_photo_cropped.small
+            })
+          } else {
+            apiResults.push({
+              name: apiData[i].name,
+              description: apiData[i].description, 
+              photos: "",
             })
           }
-        this.setState({apiData:apiResults})
+          }
+        this.setState({apiData:apiResults,currentPet:apiResults[0],displaySearch:false});
+        console.log(this.state.apiData)
       });
+      
     }
-    handleNext = () => {
-      let count = this.state.count
-      count++;
-      this.setState({count: count})
-      console.log(this.state.count);
-    };
+    nextPet= () =>{
+      let currentPetIndex = this.state.currentPetIndex
+      if( this.state.currentPetIndex < this.state.apiData.length-1){
+        currentPetIndex++
+         this.setState({currentPetIndex:currentPetIndex, 
+           currentPet: this.state.apiData[currentPetIndex]})
+
+      
+      }else{
+        currentPetIndex = 0;
+        this.setState({currentPetIndex:currentPetIndex, 
+          currentPet: this.state.apiData[currentPetIndex]})
+      }
+    }
   
     render() {
       return (
         <div>
+          {this.state.displaySearch?
         <form>
-          
           <LabelContainer>
             Select a Breed:
             <Select value={this.state.dog} onChange={this.handleChange}>
@@ -223,15 +249,14 @@ class Search extends React.Component {
           <SubmitButton type="submit" onClick={this.handleSubmit}>Search Dogs</SubmitButton>
 
         </form>
-        {this.handleNext((i, key) => <Card props = {i} key={key}/>)}
+        :<>
+        <Card props={this.state.currentPet} />
+        <button onClick={this.nextPet}>Goto next pet</button></>}
+        {/* {this.state.apiData.map((i, key) => <Card props = {i} key={key}/>)} */}
+
         </div>
       )
     };
 }
   
   export default Search
-
-  // ReactDOM.render(
-  //   <Search/>,
-  //   document.getElementById('root')
-  // );
