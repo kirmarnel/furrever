@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import front from '../assets/front2.jpeg';
+import { withRouter } from "react-router-dom";
+
 
 
 import styled from "styled-components";
@@ -140,8 +142,9 @@ const Description = styled.p`
   font-size: 10pt
 
   `;
-export const About = () => {
+const About = () => {
   return (
+    
     <InnerContainer>
           <InnerText>About</InnerText>
           <Description>Our App helps you find your Furrever dog. We have a plentiful database full of adoptable dogs for every type of dog lover.  
@@ -153,3 +156,5 @@ export const About = () => {
           </InnerContainer>
   );
 };
+
+export default withRouter(About);
