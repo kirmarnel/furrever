@@ -253,6 +253,7 @@ class Search extends React.Component {
         <Card props={this.state.currentPet} />
         <button onClick={this.nextPet}>Goto next pet</button></>}
         {/* {this.state.apiData.map((i, key) => <Card props = {i} key={key}/>)} */}
+
         </div>
       )
     };

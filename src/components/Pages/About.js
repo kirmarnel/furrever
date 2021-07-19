@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import front from '../assets/front2.jpeg';
+import { withRouter } from "react-router-dom";
 
 
 
@@ -9,7 +11,7 @@ const InnerText = styled.h2`
   text-align: center;
   font-weight: 800;
   color: #dc6a6a;
-  padding: 20pt;
+  padding: 10pt;
   font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
 
@@ -134,21 +136,25 @@ align-items: center;
 font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
 
-export const About = () => {
+const Description = styled.p`
+  color: #737373;
+
+  font-size: 10pt
+
+  `;
+const About = () => {
   return (
+    
     <InnerContainer>
           <InnerText>About</InnerText>
+          <Description>Our App helps you find your Furrever dog. We have a plentiful database full of adoptable dogs for every type of dog lover.  
+            
+          </Description>
         <LableContainer>
-          lkjsaldjfasdjhf;asdjnf;asfjn<br>
-          </br>
-          ajsfdkhsalhjsfluew
-          kjsaldjfasdjhf;asdjnf;asfjn<br>
-          </br>
-          ajsfdkhsalhjsfluew
-          kjsaldjfasdjhf;asdjnf;asfjn<br>
-          </br>
-          ajsfdkhsalhjsfluew
+        <img src = {front} height={200} width={350} alt="about"/>
           </LableContainer>
           </InnerContainer>
   );
 };
+
+export default withRouter(About);
