@@ -178,7 +178,7 @@ class Search extends React.Component {
           var apiData = response.data.animals;
           let apiResults = []
           for (let i=0;i < apiData.length;i++) {
-            if (apiData [i].photos[0].small){
+            if (apiData [i].photos[0]){
             apiResults.push({
               name: apiData[i].name,
               description: apiData[i].description, 
