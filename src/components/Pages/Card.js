@@ -218,15 +218,19 @@ const Description = styled.p`
 
 export const Card = (props) => {
 console.log(props);
+// var array = [props.props.primary_photo_cropped];
 render();
   return (
       <InnerContainer>
         <LableContainer>
-    <InnerText>Pet Name </InnerText>
-    <Container></Container>
+    <InnerText>{props.props.name} </InnerText>
+    <Container>
+      <img src={props.props.photos} alt={props.props.photos}
+      />
+    </Container>
     <Date></Date>
     <Description>
-      {props.description}
+      {props.props.description}
       Here is the gretest dog you will ever meet! She is fun and full of energy
       She would be a great addition to any family.Here is the gretest dog you will ever meet! She is fun and full of energy
       She would be a great addition to any family.
