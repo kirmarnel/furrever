@@ -9,6 +9,8 @@ import {
 import { Marginer } from "../marginer";
 import myImage from './assets/logo.png';
 import styled from "styled-components";
+import { LoginForm } from "./loginForm";
+
 
 const LableContainer = styled.div`
 width: 250px;
@@ -74,6 +76,30 @@ const FooterContainer = styled.div`
   margin: 0;
   margin-top: 7px;
 `;
+// const BottomText = styled.h5`
+// color: 220, 106, 106;
+// font-weight: 500;
+// font-size: 11px;
+// z-index: 10;
+// margin: 0;
+// margin-top: 7px;
+// `;
+
+const BoldLink = styled.a`
+  font-size: 11px;
+  color: rgb(220, 106, 106, 1);
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0 4px;
+`;
+const MutedLink = styled.a`
+  font-size: 11px;
+  color: rgba(220, 106, 106, 1);
+  font-weight: 500;
+  text-decoration: none;
+`;
+
+
 export function SignupForm(props) {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
@@ -107,6 +133,9 @@ export function SignupForm(props) {
       <Marginer direction="vertical" margin={15} />
       <SubmitButton type="submit" onClick={register} >Signup</SubmitButton>
       <Marginer direction="vertical" margin="1em" />
+        <BoldLink href="login"onClick={LoginForm} >
+          Already have an account?
+        </BoldLink>
       </LableContainer>
       <FooterContainer>
         <img src = {myImage} height={100} width={180} alt="logo"/>

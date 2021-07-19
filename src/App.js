@@ -29,12 +29,15 @@ function App() {
         <BoxContainer>
           <Switch>
             <Route exact path="/" component={Home} />
+            {/* <Route component ={SignupForm} path=''/> */}
             {/* <ProtectedRoute path="about" render={props => 
             <div>
               <NavBar />
               <About />
               </div>
             } isAuth={isAuth} /> */}
+            {/* <Route path="/signupform"></Route> */}
+  
             <Route path="/about">
               <NavBar />
               <About />
