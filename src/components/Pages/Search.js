@@ -66,7 +66,26 @@ line-weight: 5px;
 align-items: center;
 font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
+const Form= styled.div`
+  Margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.8em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
+`;
+
+const InnerText = styled.h2`
+  font-size: 25px;
+  text-align: center;
+  font-weight: 800;
+  color: #dc6a6a;
+  padding: 20pt;
+  font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+`;
 
 //Class takes user selection, feeds it into the API call, API returns information and photos (if available), then pushes to Card.js. 
 
@@ -147,9 +166,9 @@ class Search extends React.Component {
     return (
       <div>
         {this.state.displaySearch?
-        <form>
+        <Form>
           <LabelContainer>
-            Select a Breed:
+            Select a Breed
             <Select value={this.state.dog} onChange={this.handleChange}>
               <option value="Beagle">Beagle</option>
               <option value="Border Collie">Border Collie</option>
@@ -169,7 +188,7 @@ class Search extends React.Component {
           <br></br>
           <br></br>
           <SubmitButton type="submit" onClick={this.handleSubmit}>Search Dogs</SubmitButton>
-        </form>
+        </Form>
 
       :<>
       
