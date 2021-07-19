@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Axios from "axios";
 import {
   BoxContainer,
@@ -79,7 +79,6 @@ export function LoginForm(props) {
 
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  const [loginStatus, setLoginStatus] = useState("");
 
 
   const login = (res) => {
@@ -88,24 +87,12 @@ export function LoginForm(props) {
       loginPassword: loginPassword,
     }).then((res) => {
       console.log(res)
-      if (res.data.message) {
-        setLoginStatus(res.data.message);
-      } else {
-        setLoginStatus(res.data[0].email);
-      }
     })
-   
+    window.location = '/'
   };
 
   
 
-  // useEffect(() => {
-  //   Axios.get("http://localhost:3001/login").then((response) => {
-  //     if (response.data.loggedIn == true) {
-  //       setLoginStatus(response.data.user[0].email);
-  //     }
-  //   });
-  // }, []);
 
   return (
     <BoxContainer>
