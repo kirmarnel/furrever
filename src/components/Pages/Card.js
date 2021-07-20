@@ -62,7 +62,7 @@ border-radius: 80px 80px 80px 80px;
 cursor: pointer;
 :hover {
   opacity: 0.8;
-  `;
+`;
 
 const Container = styled.div`
 background-size: cover;
@@ -97,17 +97,12 @@ console.log(props);
       <LableContainer>
         <InnerText>{props.props.name} </InnerText>
         <Container>
-          <img src={props.props.photos} alt={props.props.photos}/>
+          <img src={props.props.photos} height={200} weight={250} alt={props.props.photos}/>
         </Container>
-        <Date></Date>
         <Description>
           {props.props.description}
         </Description>
         <br></br>
-        <Wrapper>
-          <ActionButton ><img src = {Thumbup} height={50} width={50} alt="up"/></ActionButton>
-          <ActionButton ><img src = {Thumbdown} height={50} width={50} alt="down"/></ActionButton>
-        </Wrapper>  
       </LableContainer>
     </InnerContainer>
   );
