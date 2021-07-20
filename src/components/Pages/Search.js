@@ -198,7 +198,7 @@ class Search extends React.Component {
         {this.state.displaySearch?
         <Form>
           <LabelContainer>
-            Select a Breed
+            <InnerText>Select a Breed</InnerText>
             <Select value={this.state.dog} onChange={this.handleChange}>
               <option value="Beagle">Beagle</option>
               <option value="Border Collie">Border Collie</option>
