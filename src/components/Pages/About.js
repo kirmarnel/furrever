@@ -2,7 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import front from '../assets/front2.jpeg';
 import { withRouter } from "react-router-dom";
-
+import FB from '../assets/fb.jpg';
+import GIT from '../assets/git.png';
 
 
 import styled from "styled-components";
@@ -141,12 +142,23 @@ const Description = styled.p`
   font-size: 10pt
   `;
   const FooterContainer = styled.div`
+  width: 350px;
   text-align: center;
   padding-top: 25px;
-  display: flex:
-  color: #dc6a6a;
-  width: 100%;
+  background-color: #f1f0f0;
+  height: 70px;
+  z-index: 0;
   `; 
+  const Img= styled.img`
+  width: 50px;
+  width: 50px;
+  height: auto; 
+  margin-bottom: 100px;
+
+
+`;
+   
+  
 
 const About = () => {
   return (
@@ -159,7 +171,10 @@ const About = () => {
         <LableContainer>
         <img src = {front} height={200} width={350} alt="about"/>
           </LableContainer>
-          <FooterContainer></FooterContainer>
+          <FooterContainer>
+          {/* <Img img src = {GIT}  alt="up"/>
+          <Img img src = {FB}  alt="down"/> */}
+          </FooterContainer>
           </InnerContainer>
   );
 };

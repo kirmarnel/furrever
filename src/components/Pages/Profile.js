@@ -6,7 +6,7 @@ const InnerText = styled.h2`
   text-align: center;
   font-weight: 800;
   color: #dc6a6a;
-  padding: 20pt;
+  padding: 10pt;
   font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
 
@@ -137,7 +137,14 @@ font-size: 10pt;
 color: #737373;
 font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
-
+const FooterContainer = styled.div`
+  width: 350px;
+  text-align: center;
+  padding-top: 25px;
+  background-color: #f1f0f0;
+  height: 70px;
+  z-index: 51;
+  `; 
 
 export const Profile = () => {
   return (
@@ -157,13 +164,15 @@ export const Profile = () => {
           <label>
             <br/>
             <br/>
-        <input
+        {/* <input
           name="acceptedTerms"
           type="checkbox"
           required />
-          <br/>I accept the terms of service
+          <br/>I accept the terms of service */}
       </label>
+      <FooterContainer></FooterContainer>
           </LableContainer>
+          
           </InnerContainer>
 
   );
