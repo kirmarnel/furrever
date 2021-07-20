@@ -138,21 +138,28 @@ font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",A
 
 const Description = styled.p`
   color: #737373;
-
   font-size: 10pt
-
   `;
+  const FooterContainer = styled.div`
+  text-align: center;
+  padding-top: 25px;
+  display: flex:
+  color: #dc6a6a;
+  width: 100%;
+  `; 
+
 const About = () => {
   return (
     
     <InnerContainer>
           <InnerText>About</InnerText>
           <Description>Our App helps you find your Furrever dog. We have a plentiful database full of adoptable dogs for every type of dog lover.  
-            
+  
           </Description>
         <LableContainer>
         <img src = {front} height={200} width={350} alt="about"/>
           </LableContainer>
+          <FooterContainer></FooterContainer>
           </InnerContainer>
   );
 };

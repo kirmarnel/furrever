@@ -53,7 +53,7 @@ const BackDrop = styled.div`
 `;
 const FormContainer = styled.form`
 width: 100%;
-margin-top: 80px;
+margin-top: 60px;
 display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 2.5px rgba(15, 15, 15, 0.19);
