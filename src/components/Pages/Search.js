@@ -86,7 +86,6 @@ const InnerText = styled.h2`
   text-align: center;
   font-weight: 800;
   color: #dc6a6a;
-  padding: 20pt;
   font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
 
@@ -116,7 +115,14 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 `
-
+const FooterContainer = styled.div`
+  width: 350px;
+  text-align: center;
+  background-color: #f1f0f0;
+  height: 70px;
+  margin-top: 115px;
+  z-index: 0;
+  `
 //Class takes user selection, feeds it into the API call, API returns information and photos (if available), then pushes to Card.js. 
 
 
@@ -218,7 +224,9 @@ class Search extends React.Component {
           <br></br>
           <br></br>
           <SubmitButton type="submit" onClick={this.handleSubmit}>Search Dogs</SubmitButton>
+          <FooterContainer></FooterContainer>
         </Form>
+        
 
       :<>
       
@@ -227,8 +235,11 @@ class Search extends React.Component {
           <ActionButton onClick={this.nextPet}><img src = {Thumbup} height={50} width={50} alt="up"/></ActionButton>
           <ActionButton onClick={this.nextPet}><img src = {Thumbdown} height={50} width={50} alt="down"/></ActionButton>
       </Wrapper>
+      <FooterContainer></FooterContainer>
+      
       </>}
       </div>
+      
     )
   };
 }

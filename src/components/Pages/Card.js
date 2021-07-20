@@ -93,7 +93,14 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 `
-
+const FooterContainer = styled.div`
+  width: 350px;
+  text-align: center;
+  padding-top: 25px;
+  background-color: #f1f0f0;
+  height: 70px;
+  z-index: 0;
+  `; 
 //Apply styling to data returned from API for client-side
 
 export const Card = (props) => {

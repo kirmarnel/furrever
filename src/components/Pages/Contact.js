@@ -108,7 +108,7 @@ const Select = styled.select`
 
 const Textarea = styled.textarea`
   width: 100%;
-  height: 200px;
+  height: 125px;
   width: 250px;
   outline: none;
   margin-bottom:20px;
@@ -147,7 +147,14 @@ const Description = styled.p`
   color: #737373;
   font-weight: 300;
   `;
-
+  const FooterContainer = styled.div`
+  width: 350px;
+  text-align: center;
+  padding-top: 25px;
+  background-color: #f1f0f0;
+  height: 70px;
+  z-index: 0;
+  `; 
 
 export const Contact = () => {
   return (
@@ -161,11 +168,10 @@ export const Contact = () => {
     <Textarea>
     </Textarea>
     <SubmitButton>Submit</SubmitButton>
-    
       <br/>
       <br/>
-  
     </LableContainer>
+    <FooterContainer></FooterContainer>
     </InnerContainer>
 
       
