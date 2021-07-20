@@ -35,7 +35,7 @@ app.get("*", (req, res) => {
 });
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/furrever',
+  process.env.MONGODB_URI || 'mongodb://localhost/Furrever',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
