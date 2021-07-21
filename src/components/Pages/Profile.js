@@ -114,7 +114,7 @@ const FooterContainer = styled.div`
   padding-top: 25px;
   background-color: #f1f0f0;
   height: 70px;
-  z-index: 51;
+  z-index: 0;
   `; 
 
 export const Profile = () => {

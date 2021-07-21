@@ -27,6 +27,9 @@ function App() {
         <BoxContainer>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/signup">
+              <SignupForm />
+            </Route>
             <Route path="/about">
               <NavBar />
               <About />
@@ -48,9 +51,6 @@ function App() {
             </Route>
             <Route path="/login">
               <LoginForm />
-            </Route>
-            <Route path="/signup">
-              <SignupForm />
             </Route>
             <Route path="/logout">
               <Logout />

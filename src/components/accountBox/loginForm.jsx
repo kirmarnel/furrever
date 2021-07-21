@@ -83,13 +83,13 @@ export function LoginForm(props) {
 
 
   const login = (res) => {
-    Axios.post("http://localhost:3001/login", {
+    Axios.post("/about", {
       loginEmail: loginEmail,
       loginPassword: loginPassword,
     }).then((res) => {
       console.log(res)
     })
-    window.location = '/'
+    window.location = '/about'
   };
 
   
