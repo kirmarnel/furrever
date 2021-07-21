@@ -84,7 +84,7 @@ function NavBar() {
                 Logout
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink
                 exact
                 to="/signup"
@@ -94,7 +94,7 @@ function NavBar() {
               >
                 Signup
               </NavLink>
-            </li>
+            </li> */}
           </ul>
           <div className="nav-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>

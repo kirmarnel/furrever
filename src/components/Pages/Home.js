@@ -15,7 +15,7 @@ const InnerText = styled.h2`
 
 export const Home = () => {
   return (
-        <NavLink to="about" class="blah">
+        <NavLink to="signup" class="blah">
         <InnerText>
           Find Your..
           </InnerText>

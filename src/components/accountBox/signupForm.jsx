@@ -101,7 +101,7 @@ export function SignupForm(props) {
     Axios.post('http://localhost:3001/signup', registered)
     .then(res => console.log(res))
 
-    window.location ='/'
+    window.location ='/about'
   }
 
   return (
@@ -117,7 +117,7 @@ export function SignupForm(props) {
         <Input type="password" placeholder="Confirm Password" />
       </FormContainer>
       <Marginer direction="vertical" margin={15} />
-      <SubmitButton type="submit" onClick={register} >Signup</SubmitButton>
+      <SubmitButton type="about" onClick={register} >Signup</SubmitButton>
       <Marginer direction="vertical" margin="1em" />
         <BoldLink href="login"onClick={LoginForm} >
           Already have an account? Signin!

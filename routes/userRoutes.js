@@ -17,10 +17,10 @@ const securePassword = await bcrypt.hash(req.body.password, saltPassword)
    signedUpUser.save()
    .then(data => {
     req.session.save(() => {
-        req.session.user_id = userData.id;
+        req.session.user_id = data.id;
         req.session.logged_in = true;
         
-        res.json({ user: userData, message: 'You are now logged in!' });
+        res.json({ user: data, message: 'You are now logged in!' });
       });
    }) 
    .catch(err => {
@@ -29,25 +29,27 @@ const securePassword = await bcrypt.hash(req.body.password, saltPassword)
 })
 
 router.post('/login', (req, res)=> {
+  console.log (req.body)
     let getUser;
     User.findOne({
         email: req.body.loginEmail
     }).then(user => {
         if(!user) {
-            return res.status(401).json({message: "No User Found"});
+            return false
         }
         getUser = user;
         return bcrypt.compare(req.body.loginPassword, user.password);
     }).then(res => {
+      console.log(res)
         if (!res) {
             return res.status(401).json({message: "Auth Failed"});
         }
         else {
             req.session.save(() => {
-                req.session.user_id = userData.id;
+                req.session.user_id = getUser._id;
                 req.session.logged_in = true;
                 
-                res.json({ user: userData, message: 'You are now logged in!' });
+                res.json({ user: getUser, message: 'You are now logged in!' });
               });
         }
     })
