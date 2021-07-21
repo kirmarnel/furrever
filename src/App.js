@@ -13,12 +13,12 @@ import { AppContainer } from "./components/common";
 import { Profile } from "./components/Pages/Profile";
 import { LoginForm } from "./components/accountBox/loginForm";
 import { SignupForm } from "./components/accountBox/signupForm";
-import ProtectedRoute from "./components/ProtectedRoute";
+import { Logout } from "./components/Pages/Logout"
+
 
 
 
 function App() {
-  const [isAuth, setIsAuth] = useState(true)
   return (
     <>
       <Router>
@@ -29,15 +29,6 @@ function App() {
         <BoxContainer>
           <Switch>
             <Route exact path="/" component={Home} />
-            {/* <Route component ={SignupForm} path=''/> */}
-            {/* <ProtectedRoute path="about" render={props => 
-            <div>
-              <NavBar />
-              <About />
-              </div>
-            } isAuth={isAuth} /> */}
-            {/* <Route path="/signupform"></Route> */}
-  
             <Route path="/about">
               <NavBar />
               <About />
@@ -62,6 +53,9 @@ function App() {
             </Route>
             <Route path="/signup">
               <SignupForm />
+            </Route>
+            <Route path="/logout">
+              <Logout />
             </Route>
           </Switch>
           </BoxContainer>

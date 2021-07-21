@@ -16,8 +16,12 @@ const securePassword = await bcrypt.hash(req.body.password, saltPassword)
    console.log(signedUpUser, "signedUpUser")
    signedUpUser.save()
    .then(data => {
-    //    res.json(data)
-       console.log(data)
+    req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.logged_in = true;
+        
+        res.json({ user: userData, message: 'You are now logged in!' });
+      });
    }) 
    .catch(err => {
        res.json(err)
@@ -39,9 +43,25 @@ router.post('/login', (req, res)=> {
             return res.status(401).json({message: "Auth Failed"});
         }
         else {
-            console.log('Logged In')
+            req.session.save(() => {
+                req.session.user_id = userData.id;
+                req.session.logged_in = true;
+                
+                res.json({ user: userData, message: 'You are now logged in!' });
+              });
         }
     })
 });
+
+router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+      // Remove the session variables
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  });
 
 module.exports = router
