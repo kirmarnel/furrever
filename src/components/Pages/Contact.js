@@ -1,6 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-
 
 
 import styled from "styled-components";
@@ -28,11 +26,6 @@ const InnerContainer = styled.div`
   align-items: center;
   text-align: center;
 
-`;
-
-const BottomContainer = styled.div`
-height:450px;
-display: flex;
 `;
 
 
@@ -82,29 +75,6 @@ const SubmitButton = styled.button`
     filter: brightness(1.03);
   }
 `;
-const Select = styled.select`
-  width: 100%;
-  height: 42px;
-  outline: none;
-  border: 1px solid rgba(200, 200, 200, 0.3);
-  padding: 0px 10px;
-  border-bottom: 1.4px solid transparent;
-  transition: all 200ms ease-in-out;
-  font-size: 12px;
-  color: #afada2;
-  &::placeholder {
-    color: rgba(200, 200, 200, 1);
-  }
-
-  &:not(:last-of-type) {
-    border-bottom: 1.5px solid rgba(200, 200, 200, 0.4) 20;
-  }
-
-  &:focus {
-    outline: none;
-    border-bottom: 2px solid rgb(220, 106, 106, 1);
-  }
-`;
 
 const Textarea = styled.textarea`
   width: 100%;
@@ -143,10 +113,7 @@ line-weight: 5px;
 align-items: center;
 font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
-const Description = styled.p`
-  color: #737373;
-  font-weight: 300;
-  `;
+
   const FooterContainer = styled.div`
   width: 350px;
   text-align: center;

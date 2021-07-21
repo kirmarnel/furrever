@@ -76,14 +76,6 @@ const FooterContainer = styled.div`
   margin: 0;
   margin-top: 7px;
 `;
-// const BottomText = styled.h5`
-// color: 220, 106, 106;
-// font-weight: 500;
-// font-size: 11px;
-// z-index: 10;
-// margin: 0;
-// margin-top: 7px;
-// `;
 
 const BoldLink = styled.a`
   font-size: 11px;
@@ -91,12 +83,6 @@ const BoldLink = styled.a`
   font-weight: 500;
   text-decoration: none;
   margin: 0 4px;
-`;
-const MutedLink = styled.a`
-  font-size: 11px;
-  color: rgba(220, 106, 106, 1);
-  font-weight: 500;
-  text-decoration: none;
 `;
 
 

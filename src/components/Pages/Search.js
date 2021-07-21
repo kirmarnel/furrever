@@ -7,10 +7,6 @@ import Thumbdown from '../assets/thumbsdown.png';
 
 const petfinder = require("@petfinder/petfinder-js")
 
-
-//Styling
-
-
 const SubmitButton = styled.button`
   width: 100%;
   top-margin: 10px;
@@ -158,7 +154,7 @@ class Search extends React.Component {
         var apiData = response.data.animals;
         let apiResults = []
         for (let i=0;i < apiData.length;i++) {
-          if (apiData [i].photos[0]){
+          if (apiData[i].photos[0]){
           apiResults.push({
             name: apiData[i].name,
             description: apiData[i].description, 
