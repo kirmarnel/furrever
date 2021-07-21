@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components"
 import Thumbup from '../assets/thumbsup.png';
 import Thumbdown from '../assets/thumbsdown.png';
-
+import front from '../assets/front.jpeg';
 
 //Styling
 
@@ -11,7 +11,7 @@ const InnerText = styled.h2`
   text-align: center;
   font-weight: 800;
   color: #dc6a6a;
-  padding: 20pt;
+  padding: 5pt;
   font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
 
@@ -62,7 +62,7 @@ border-radius: 80px 80px 80px 80px;
 cursor: pointer;
 :hover {
   opacity: 0.8;
-  `;
+`;
 
 const Container = styled.div`
 background-size: cover;
@@ -71,13 +71,19 @@ background-clip: content-box;
 border: 3px solid white;
 height: 200px;
 width: 250px;
-box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
+box-shadow: 0 0 0px rgba(15, 15, 15, 0.28);
 position: relative;
-margin: 0 auto;
-margin-top: 5px;
+margin: 5px auto 22px;
 border-radius: 19px;
-`;
 
+`;
+const Img = styled.img`
+border-radius: 19px;
+width:100%;
+height: auto; 
+max-height:200px;
+
+`;
 const Wrapper = styled.div`
 float: left;
 width: 100%;
@@ -87,7 +93,14 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 `
-
+const FooterContainer = styled.div`
+  width: 350px;
+  text-align: center;
+  padding-top: 25px;
+  background-color: #f1f0f0;
+  height: 70px;
+  z-index: 0;
+  `; 
 //Apply styling to data returned from API for client-side
 
 export const Card = (props) => {
@@ -97,17 +110,12 @@ console.log(props);
       <LableContainer>
         <InnerText>{props.props.name} </InnerText>
         <Container>
-          <img src={props.props.photos} alt={props.props.photos}/>
+          <Img src={props.props.photos ==="Sorry, this dog has no photos"?front:props.props.photos}  alt={props.props.photos}/>
         </Container>
-        <Date></Date>
         <Description>
           {props.props.description}
         </Description>
         <br></br>
-        <Wrapper>
-          <ActionButton ><img src = {Thumbup} height={50} width={50} alt="up"/></ActionButton>
-          <ActionButton ><img src = {Thumbdown} height={50} width={50} alt="down"/></ActionButton>
-        </Wrapper>  
       </LableContainer>
     </InnerContainer>
   );

@@ -2,7 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import front from '../assets/front2.jpeg';
 import { withRouter } from "react-router-dom";
-
+import FB from '../assets/fb.jpg';
+import GIT from '../assets/git.png';
 
 
 import styled from "styled-components";
@@ -138,21 +139,42 @@ font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",A
 
 const Description = styled.p`
   color: #737373;
-
   font-size: 10pt
-
   `;
+  const FooterContainer = styled.div`
+  width: 350px;
+  text-align: center;
+  padding-top: 25px;
+  background-color: #f1f0f0;
+  height: 70px;
+  z-index: 0;
+  `; 
+  const Img= styled.img`
+  width: 50px;
+  width: 50px;
+  height: auto; 
+  margin-bottom: 100px;
+
+
+`;
+   
+  
+
 const About = () => {
   return (
     
     <InnerContainer>
           <InnerText>About</InnerText>
           <Description>Our App helps you find your Furrever dog. We have a plentiful database full of adoptable dogs for every type of dog lover.  
-            
+  
           </Description>
         <LableContainer>
         <img src = {front} height={200} width={350} alt="about"/>
           </LableContainer>
+          <FooterContainer>
+          {/* <Img img src = {GIT}  alt="up"/>
+          <Img img src = {FB}  alt="down"/> */}
+          </FooterContainer>
           </InnerContainer>
   );
 };

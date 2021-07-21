@@ -2,6 +2,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Card } from "../Pages/Card";
+import Thumbup from '../assets/thumbsup.png';
+import Thumbdown from '../assets/thumbsdown.png';
+
 const petfinder = require("@petfinder/petfinder-js")
 
 
@@ -83,10 +86,43 @@ const InnerText = styled.h2`
   text-align: center;
   font-weight: 800;
   color: #dc6a6a;
-  padding: 20pt;
   font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
 
+
+
+const ActionButton = styled.button`
+display:inline-block;
+text-weight: 10px;
+margin-top: 50px;
+margin-left: 10px;
+padding: 8px 14px 10px 10px;
+border: none;
+background: #ffff;
+color: #fff;
+border-radius: 80px 80px 80px 80px;
+cursor: pointer;
+:hover {
+  opacity: 0.8;
+`;
+
+const Wrapper = styled.div`
+float: left;
+width: 100%;
+text-align: center;
+position: relative;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+`
+const FooterContainer = styled.div`
+  width: 350px;
+  text-align: center;
+  background-color: #f1f0f0;
+  height: 70px;
+  margin-top: 115px;
+  z-index: 0;
+  `
 //Class takes user selection, feeds it into the API call, API returns information and photos (if available), then pushes to Card.js. 
 
 
@@ -126,13 +162,13 @@ class Search extends React.Component {
           apiResults.push({
             name: apiData[i].name,
             description: apiData[i].description, 
-            photos: apiData[i].photos[0].small
+            photos: apiData[i].photos[0].medium
           })
         }else if (apiData[i].primary_photo_cropped){
           apiResults.push({
             name: apiData[i].name,
             description: apiData[i].description, 
-            photos: apiData[i].primary_photo_cropped.small
+            photos: apiData[i].primary_photo_cropped.medium
           })
         } else {
           apiResults.push({
@@ -168,7 +204,7 @@ class Search extends React.Component {
         {this.state.displaySearch?
         <Form>
           <LabelContainer>
-            Select a Breed
+            <InnerText>Select a Breed</InnerText>
             <Select value={this.state.dog} onChange={this.handleChange}>
               <option value="Beagle">Beagle</option>
               <option value="Border Collie">Border Collie</option>
@@ -188,15 +224,24 @@ class Search extends React.Component {
           <br></br>
           <br></br>
           <SubmitButton type="submit" onClick={this.handleSubmit}>Search Dogs</SubmitButton>
+          <FooterContainer></FooterContainer>
         </Form>
+        
 
       :<>
       
       <Card props={this.state.currentPet} />
-      <button onClick={this.nextPet}>NEXT</button></>}
+        <Wrapper>
+          <ActionButton onClick={this.nextPet}><img src = {Thumbup} height={50} width={50} alt="up"/></ActionButton>
+          <ActionButton onClick={this.nextPet}><img src = {Thumbdown} height={50} width={50} alt="down"/></ActionButton>
+      </Wrapper>
+      <FooterContainer></FooterContainer>
+      
+      </>}
       </div>
+      
     )
   };
 }
   
-export default Search
+export default Search; 

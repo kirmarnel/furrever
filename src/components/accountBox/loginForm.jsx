@@ -53,7 +53,7 @@ const BackDrop = styled.div`
 `;
 const FormContainer = styled.form`
 width: 100%;
-margin-top: 80px;
+margin-top: 60px;
 display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 2.5px rgba(15, 15, 15, 0.19);
@@ -73,6 +73,38 @@ const FooterContainer = styled.div`
   z-index: 10;
   margin: 0;
   margin-top: 7px;
+`;
+const ActionButton = styled.button`
+display:inline-block;
+text-weight: 10px;
+margin-top: 50px;
+margin-left: 10px;
+padding: 8px 14px 10px 10px;
+border: none;
+background: #ffff;
+color: #fff;
+border-radius: 80px 80px 80px 80px;
+cursor: pointer;
+:hover {
+  opacity: 0.8;
+`;
+const GoogleButton =styled.button`
+width: 100%;
+top-margin: 10px;
+padding: 10px 40%;
+color: #fff;
+font-size: 15px;
+font-weight: 600;
+border: none;
+border-radius: 100px 100px 100px 100px;
+cursor: pointer;
+transition: all, 240ms ease-in-out;
+background: rgb(241, 196, 15);
+background: linear-gradient(
+  58deg,
+  rgba(220, 106, 106, 1) 20%,
+  rgba(198, 112, 112, 1) 100%
+);
 `;
 
 export function LoginForm(props) {
@@ -109,6 +141,7 @@ export function LoginForm(props) {
       <SubmitButton type="submit" onClick={login}>Signin</SubmitButton>
       <Marginer direction="vertical" margin="1em" />
       </LableContainer>  
+      <div class="g-signin2" data-width="40" data-height="40" data-onsuccess="onSignIn"></div>
       <FooterContainer>
         <img src = {myImage} height={100} width={180} alt="logo"/>
         </FooterContainer>

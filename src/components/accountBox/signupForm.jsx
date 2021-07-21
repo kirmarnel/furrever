@@ -134,7 +134,7 @@ export function SignupForm(props) {
       <SubmitButton type="submit" onClick={register} >Signup</SubmitButton>
       <Marginer direction="vertical" margin="1em" />
         <BoldLink href="login"onClick={LoginForm} >
-          Already have an account?
+          Already have an account? Signin!
         </BoldLink>
       </LableContainer>
       <FooterContainer>
