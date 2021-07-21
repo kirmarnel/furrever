@@ -1,7 +1,5 @@
 import "./App.css"
 import NavBar from "./components/NavBar";
-import { useState } from "react";
-// import { AccountBox } from "./components/accountBox";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Home } from "./components/Pages/Home";
 import About  from "./components/Pages/About";

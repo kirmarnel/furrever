@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components"
-import Thumbup from '../assets/thumbsup.png';
-import Thumbdown from '../assets/thumbsdown.png';
 import front from '../assets/front.jpeg';
 
 //Styling
@@ -38,31 +36,12 @@ align-items: center;
 font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 `;
 
-const Date = styled.div`
-  color: #ccc;
-  font-weight: 300;
-  margin: 6px 0;
-`
 const Description = styled.p`
   color: #737373;
   font-weight: 300;
 
 `;
 
-const ActionButton = styled.button`
-display:inline-block;
-text-weight: 10px;
-margin-top: 50px;
-margin-left: 10px;
-padding: 8px 14px 10px 10px;
-border: none;
-background: #ffff;
-color: #fff;
-border-radius: 80px 80px 80px 80px;
-cursor: pointer;
-:hover {
-  opacity: 0.8;
-`;
 
 const Container = styled.div`
 background-size: cover;
@@ -84,23 +63,7 @@ height: auto;
 max-height:200px;
 
 `;
-const Wrapper = styled.div`
-float: left;
-width: 100%;
-text-align: center;
-position: relative;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-`
-const FooterContainer = styled.div`
-  width: 350px;
-  text-align: center;
-  padding-top: 25px;
-  background-color: #f1f0f0;
-  height: 70px;
-  z-index: 0;
-  `; 
+
 //Apply styling to data returned from API for client-side
 
 export const Card = (props) => {
