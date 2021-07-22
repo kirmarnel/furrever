@@ -2,7 +2,6 @@
   "name": "login",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://localhost:3001",
   "dependencies": {
     "@okta/okta-react": "^6.0.0",
     "@petfinder/petfinder-js": "^1.0.6",
