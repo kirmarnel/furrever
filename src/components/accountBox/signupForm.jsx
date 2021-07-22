@@ -108,7 +108,7 @@ export function SignupForm(props) {
     <BoxContainer>
       <BackDrop></BackDrop>
       <BackDrop></BackDrop>
-    <InnerText>Creat Account <SmallText>Please signup to continue</SmallText></InnerText>
+    <InnerText>Create Account <SmallText>Please signup to continue</SmallText></InnerText>
       <LableContainer>
       <FormContainer>
         <Input type="text" placeholder="Full Name" onChange={(e) => {setFullName(e.target.value)}} />

@@ -23,10 +23,10 @@ The purpose of this app is to connect people with adoptable pets based on their 
 * Heroku
 * NPM
 * Yarn
-* Mysql
+* Mongoose
 
 ## Deployment
-The app is deployed with Heroku
+The app is deployed with Heroku https://furrever.herokuapp.com/
 
 ## Contributers
 1. https://github.com/kirmarnel Kirsten Nelson
